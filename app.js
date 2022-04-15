@@ -3,7 +3,8 @@ let button = document.querySelector("#button-addon2");
 let whatsapp_box = document.querySelector(".whatsapp");
 let discord_box = document.querySelector(".discord");
 let general_box = document.querySelector(".general");
-let copy = document.querySelector(".copy");
+let whatsappcopy = document.querySelector(".whatsappcopy");
+let discordcopy = document.querySelector(".discordcopy");
 function wordleify(platform) {
 	let text = user_input.value
 	.split(" ")
@@ -46,3 +47,10 @@ user_input.addEventListener("keyup", () => {
 	general_box.innerHTML = wordleify("general");
 })
 
+whatsappcopy.addEventListener("click", () => {
+	navigator.clipboard.writeText(whatsapp_box.textContent);
+});
+
+discordcopy.addEventListener("click", () => {
+	navigator.clipboard.writeText(discord_box.textContent);
+})
