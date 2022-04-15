@@ -8,7 +8,7 @@ function wordleify(platform) {
 	let text = user_input.value
 	.split(" ")
 	.map(word => {
-		if(/^.{5}$/.test(`${word}`)) {
+		if(/\b\w{5}\b/.test(`${word}`)) {
 			console.log("what");
 			if (platform == "discord") {
 				return ("**" + word + "**");
